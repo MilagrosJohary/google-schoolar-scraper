@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+</head>
+<body>
+    {% for user in users %}
+        <p>{{ user.name }}</p>
+        <img src="{{ user.photo }}" />
+        <p>{{ user.books_number }}</p>
+        {% for book in user.books %}
+            <a href="{{ book.link }}">{{ book.name }}</a><br>
+        {% endfor %}
+    {% endfor %}
+</body>
+</html>
