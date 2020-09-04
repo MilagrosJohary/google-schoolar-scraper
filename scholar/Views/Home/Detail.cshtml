@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "Detail";
+}
+
+    <div class="row">
+        <div class="row">
+            <br />
+            <div class="col-md-2 justify-content-center">
+                <img src="@Model.image" class="img-thumbnail rounded-circle" />
+            </div>
+            <div class="col-md-10">
+                <h2>@Model.name</h2>
+            </div>
+        </div>
+        <br />
+        <table class="table table-responsive">
+            <tr>
+                <th>Articulo</th>
+                <th>Año</th>
+                <th>Citaciones</th>
+            </tr>
+            @foreach (var paper in Model.papers)
+            {
+                <tr>
+                    <td>
+                        <a href="@paper.url">@paper.name</a>
+                    </td>
+                    <td>@paper.year</td>
+                    <td>@paper.cit</td>
+                </tr>
+            }
+        </table>
+        <br />
+        <h5>Se encontraron @Model.papers.Count artículos</h5>
+        <table class="table table-responsive" style="text-align: center">
+            <tr>
+                <th>
+                    <h4 align="center">Número de citaciones por año</h4>
+                    @{ switch (Model.name)
+                        {
+                            case "SANTIAGO DOMINGO MOQUILLAZA HENRIQUEZ": <img src="http://drive.google.com/uc?export=view&id=11yPKLjprrL3O_wFhde16MVCNijUTS9xf" width="650" height="350"> break;
+                            case "LUIS ANGEL GUERRA GRADOS": <img src="http://drive.google.com/uc?export=view&id=1drD322XVRep6aVZXm6g1lXY2BY_LgoTn" width="650" height="350"> break;
+                            case "HUGO FROILAN VEGA HUERTA": <img src="http://drive.google.com/uc?export=view&id=1Y7lvrzsRLzIKOqDXFlPE2HnrDu59hEO_" width="650" height="350"> break;
+                            case "FELIX ARMANDO FERMIN PEREZ": <img src="http://drive.google.com/uc?export=view&id=1q4uB6-Jl5YoX4knDJYRwPNL3v7U_32J-" width="650" height="350"> break;
+                            case "JORGE GUERRA GUERRA": <img src="http://drive.google.com/uc?export=view&id=1Eii7fVzWgtARfn6eOjn7MrIblDHJ-d5d" width="650" height="350"> break;
+                        }
+
+
+                    }
+                </th>
+                <th>
+                    <h4 align="center">Número de artículos por año</h4>
+                    @{ switch (Model.name)
+                        {
+                            case "SANTIAGO DOMINGO MOQUILLAZA HENRIQUEZ": <img src="http://drive.google.com/uc?export=view&id=1P-ND4z2zrCBDkk2RgOqyfGn24CGDqlC7" width="450" height="350"> break;
+                            case "LUIS ANGEL GUERRA GRADOS": <img src="http://drive.google.com/uc?export=view&id=1jo_WCw7kFD3Jxg-zzHocQ3o1uHFOcoNc" width="550" height="350"> break;
+                            case "HUGO FROILAN VEGA HUERTA": <img src="http://drive.google.com/uc?export=view&id=1dDPLvRd8J3eK368Uw5jJmwAHQ8q5NYcb" width="550" height="350"> break;
+                            case "FELIX ARMANDO FERMIN PEREZ": <img src="http://drive.google.com/uc?export=view&id=1mJjNdBYYTHY5HuKy5ia433f-acA-O7lE" width="550" height="350"> break;
+                            case "JORGE GUERRA GUERRA": <img src="http://drive.google.com/uc?export=view&id=1AK9NXL57fUcg4OiSq8oqF5DX-W-vR50Z" width="550" height="350"> break;
+                        }
+                    }
+                </th>
+            </tr>
+        </table>
+
+
+    </div>
